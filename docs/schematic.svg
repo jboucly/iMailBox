@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="640" viewBox="0 0 1140 640" role="img" aria-label="Schéma électrique iMailBox"><style>
+text{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:13px;fill:#1d2a2e}
+.lbl{font-family:"IBM Plex Sans",Helvetica,Arial,sans-serif;font-weight:600;font-size:14px}
+.sm{font-size:11.5px;fill:#5d6b70}
+.w{fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.vbat{stroke:#c8322b}.vsys{stroke:#d07a12}.gnd{stroke:#2f4f6f}.sig{stroke:#2d8a4e}
+.part{fill:#fff;stroke:#1d2a2e;stroke-width:2}
+.ink{fill:none;stroke:#1d2a2e;stroke-width:2}
+.fillink{fill:#1d2a2e}
+</style>
+<rect width="1140" height="640" fill="#ffffff"/>
+    <!-- ===== Fils ===== -->
+    <!-- Panneau -> TP4056 -->
+    <path class="w vbat" d="M120 80 H170"/>
+    <path class="w gnd" d="M120 120 H170"/>
+    <!-- Batterie -> TP4056 -->
+    <path class="w vbat" d="M210 230 V290"/>
+    <path class="w gnd" d="M290 230 V290"/>
+    <!-- OUT- -> GND -->
+    <path class="w gnd" d="M330 200 H350 V600"/>
+    <!-- Rail GND -->
+    <path class="w gnd" d="M350 600 H1060"/>
+    <!-- Rail VBAT -->
+    <path class="w vbat" d="M330 70 H640"/>
+    <path class="w vbat" d="M420 70 V400"/>
+    <!-- R1 source -> grille -->
+    <path class="w vbat" d="M600 70 V100"/>
+    <path class="w sig" d="M600 140 V170 H680"/>
+    <path class="w sig" d="M680 100 V262"/>
+    <!-- VSYS -->
+    <path class="w vsys" d="M720 70 H1060 V280"/>
+    <path class="w gnd" d="M1060 294 V600"/>
+    <path class="w vsys" d="M780 70 V150 H800"/>
+    <path class="w vsys" d="M985 70 V200"/>
+    <path class="w sig" d="M985 240 V400 H960"/>
+    <!-- D6 -> D2 -> N -->
+    <path class="w sig" d="M800 200 H560 V222"/>
+    <path class="w sig" d="M560 250 V280"/>
+    <!-- N -> R2 -> base -->
+    <path class="w sig" d="M560 280 H575"/>
+    <path class="w sig" d="M615 280 H666"/>
+    <!-- R3 base -> GND -->
+    <path class="w sig" d="M630 280 V470"/>
+    <path class="w gnd" d="M630 510 V600"/>
+    <!-- emetteur -> GND -->
+    <path class="w gnd" d="M680 298 V600"/>
+    <!-- PIR OUT -> D1 et R4 -->
+    <path class="w sig" d="M480 440 H740 V405"/>
+    <path class="w sig" d="M560 440 V370"/>
+    <path class="w sig" d="M560 342 V280"/>
+    <path class="w sig" d="M740 365 V330 H800"/>
+    <!-- PIR GND -->
+    <path class="w gnd" d="M430 500 V600"/>
+    <!-- D1 GND -->
+    <path class="w gnd" d="M800 450 H780 V600"/>
+
+    <!-- Points de jonction -->
+    <g class="dot">
+      <circle cx="420" cy="70" r="4.5" fill="#c8322b"/>
+      <circle cx="600" cy="70" r="4.5" fill="#c8322b"/>
+      <circle cx="680" cy="170" r="4.5" fill="#2d8a4e"/>
+      <circle cx="560" cy="280" r="4.5" fill="#2d8a4e"/>
+      <circle cx="630" cy="280" r="4.5" fill="#2d8a4e"/>
+      <circle cx="560" cy="440" r="4.5" fill="#2d8a4e"/>
+      <circle cx="780" cy="70" r="4.5" fill="#d07a12"/>
+      <circle cx="985" cy="70" r="4.5" fill="#d07a12"/>
+      <circle cx="430" cy="600" r="4.5" fill="#2f4f6f"/>
+      <circle cx="630" cy="600" r="4.5" fill="#2f4f6f"/>
+      <circle cx="680" cy="600" r="4.5" fill="#2f4f6f"/>
+      <circle cx="780" cy="600" r="4.5" fill="#2f4f6f"/>
+    </g>
+
+    <!-- ===== Composants ===== -->
+    <!-- Panneau solaire -->
+    <rect class="part" x="30" y="55" width="90" height="90" rx="4"/>
+    <path class="ink" d="M30 85 H120 M30 115 H120 M60 55 V145 M90 55 V145" style="stroke-width:1"/>
+    <text class="lbl" x="30" y="40">Panneau 5 V</text>
+    <text x="104" y="76">+</text><text x="106" y="137">−</text>
+
+    <!-- TP4056 -->
+    <rect class="part" x="170" y="40" width="160" height="190" rx="4"/>
+    <text class="lbl" x="208" y="30">TP4056 (protégé)</text>
+    <text x="178" y="85">IN+</text><text x="178" y="125">IN−</text>
+    <text x="278" y="75">OUT+</text><text x="278" y="205">OUT−</text>
+    <text x="198" y="222">B+</text><text x="278" y="222">B−</text>
+
+    <!-- LiPo -->
+    <rect class="part" x="180" y="290" width="140" height="60" rx="6"/>
+    <text class="lbl" x="200" y="318">LiPo 3,7 V</text>
+    <text class="sm" x="200" y="336">3000 mAh</text>
+    <text x="214" y="285" style="fill:#c8322b">+</text><text x="296" y="285" style="fill:#2f4f6f">−</text>
+
+    <!-- PIR -->
+    <rect class="part" x="380" y="400" width="100" height="100" rx="50"/>
+    <text class="lbl" x="400" y="455">AM312</text>
+    <text class="sm" x="426" y="418">VCC</text>
+    <text class="sm" x="446" y="444">OUT</text>
+    <text class="sm" x="418" y="492">GND</text>
+    <text class="sm" x="372" y="530">PIR</text>
+
+    <!-- Q1 MOSFET P -->
+    <path class="ink" d="M640 70 H655 V90 M720 70 H705 V90"/>
+    <path class="ink" d="M652 90 H708" style="stroke-width:3"/>
+    <path class="ink" d="M655 100 H705"/>
+    <path class="fillink" d="M672 84 L684 90 L672 96 Z" transform="rotate(180 678 90)"/>
+    <text class="lbl" x="628" y="36">Q1 NDP6020P</text>
+    <text class="sm" x="634" y="54">S</text><text class="sm" x="716" y="54">D</text>
+    <text class="sm" x="688" y="124">G</text>
+
+    <!-- R1 -->
+    <rect class="part" x="593" y="100" width="14" height="40"/>
+    <text x="585" y="118" text-anchor="end">R1</text>
+    <text class="sm" x="585" y="134" text-anchor="end">100 kΩ</text>
+
+    <!-- Q2 NPN -->
+    <circle class="part" cx="680" cy="280" r="27"/>
+    <path class="ink" d="M666 266 V294" style="stroke-width:3"/>
+    <path class="ink" d="M666 273 L680 262 M666 287 L680 298"/>
+    <path class="fillink" d="M680 298 L670 296 L675 289 Z"/>
+    <text class="lbl" x="714" y="276">Q2</text>
+    <text class="sm" x="714" y="292">2N2222</text>
+    <text class="sm" x="688" y="246">C</text><text class="sm" x="688" y="320">E</text><text class="sm" x="644" y="270">B</text>
+
+    <!-- R2 -->
+    <rect class="part" x="575" y="273" width="40" height="14"/>
+    <text x="595" y="262" text-anchor="middle">R2 10 kΩ</text>
+
+    <!-- R3 -->
+    <rect class="part" x="623" y="470" width="14" height="40"/>
+    <text x="616" y="488" text-anchor="end">R3</text>
+    <text class="sm" x="616" y="504" text-anchor="end">100 kΩ</text>
+
+    <!-- D2 (D6), pointe vers le bas -->
+    <path class="fillink" d="M548 222 H572 L560 248 Z"/>
+    <path class="ink" d="M547 250 H573" style="stroke-width:3"/>
+    <text x="540" y="234" text-anchor="end">D2</text>
+    <text class="sm" x="540" y="250" text-anchor="end">1N4148</text>
+
+    <!-- D1 (PIR), pointe vers le haut -->
+    <path class="fillink" d="M548 370 H572 L560 344 Z"/>
+    <path class="ink" d="M547 342 H573" style="stroke-width:3"/>
+    <text x="540" y="352" text-anchor="end">D1</text>
+    <text class="sm" x="540" y="368" text-anchor="end">1N4148</text>
+
+    <!-- R4 -->
+    <rect class="part" x="733" y="365" width="14" height="40"/>
+    <text x="726" y="383" text-anchor="end">R4</text>
+    <text class="sm" x="726" y="399" text-anchor="end">10 kΩ</text>
+
+    <!-- R5 -->
+    <rect class="part" x="978" y="200" width="14" height="40"/>
+    <text x="1000" y="218">R5</text>
+    <text class="sm" x="1000" y="234">100 kΩ</text>
+
+    <!-- C1 -->
+    <path class="ink" d="M1042 280 H1078" style="stroke-width:3"/>
+    <path class="ink" d="M1042 294 H1078" style="stroke-width:3"/>
+    <text x="1084" y="278" style="fill:#d07a12">+</text>
+    <text x="1072" y="324" text-anchor="middle">C1</text>
+    <text class="sm" x="1072" y="340" text-anchor="middle">1000 µF</text>
+    <text class="sm" x="1072" y="354" text-anchor="middle">10 V</text>
+
+    <!-- D1 Mini Pro -->
+    <rect class="part" x="800" y="120" width="160" height="350" rx="6"/>
+    <path class="ink" d="M920 120 V92 M908 82 L920 92 L932 82"/>
+    <text class="sm" x="938" y="98">u.FL</text>
+    <text class="lbl" x="836" y="290">WEMOS</text>
+    <text class="lbl" x="822" y="308">D1 Mini Pro</text>
+    <text x="810" y="155">5V</text>
+    <text x="810" y="205">D6</text>
+    <text class="sm" x="836" y="205">GPIO12</text>
+    <text x="810" y="335">D5</text>
+    <text class="sm" x="836" y="335">GPIO14</text>
+    <text x="926" y="405">A0</text>
+    <text x="810" y="455">GND</text>
+
+    <!-- Étiquettes de rails -->
+    <text class="sm" x="440" y="60" style="fill:#c8322b">VBAT 3,0–4,2 V</text>
+    <text class="sm" x="800" y="60" style="fill:#d07a12">VSYS (ESP alimenté)</text>
+    <text class="sm" x="870" y="625" style="fill:#2f4f6f">GND commun</text>
+  </svg>
